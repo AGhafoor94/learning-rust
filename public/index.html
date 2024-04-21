@@ -8,6 +8,6 @@
     <button hx-post="/todos" hx-trigger="click" hx-target="#todos-content" hx-swap="beforeend">Add</button>
 </form>
 <div id="list" hx-get="/todos" hx-target="this" hx-trigger="load" hx-swap="outerHTML">
-    Loading...
+    <a href="/weather">Weather</a>
 </div>
 {% endblock %}

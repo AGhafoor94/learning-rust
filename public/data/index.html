@@ -1,13 +1,33 @@
-{% extends "../base.html" %} {% block content %}
+{% extends "../base.html" %} 
+{% block title %}Todo{% endblock %}
+{% block content %}
 <div class="container">
   <div class="row">
-    <h1>Weather Data</h1>
-    {% for todo in todos %}
-    <tr>
-      <td>{{ todo.title }}</td>
-    </tr>
-    {% endfor %}
-    <form id="add-form">
+    <div class="col-12">
+        <h1>Todo Data</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>User Id</th>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for todo in todos %}
+                <tr>
+                    <td><a href="/todo/{{todo.user_id}}">{{ todo.user_id }}</a></td>
+                    <td><a href="/todo/{{todo.id}}">{{ todo.id }}</a></td>
+                    <td><a href="/todo_query?user={{todo.user_id}}&id={{todo.id}}">{{ todo.title }}</a></td>
+                    <td>{{ todo.completed }}</td>
+                </tr>
+                
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- <form id="add-form">
       <input
         placeholder="Your todo description..."
         required
@@ -22,7 +42,7 @@
       >
         Add
       </button>
-    </form>
+    </form> -->
   </div>
 </div>
 {% endblock %}

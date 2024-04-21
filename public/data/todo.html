@@ -1,6 +1,7 @@
-<!-- <tr id="shuttle-todo-{{ todo.id }}">
+{% extends "../base.html" %} {% block content %}
+<tr id="shuttle-todo-{{ todo.id }}">
     <td> {{ todo.id }} </td>
-    <td id="shuttle-todo-desc-{{todo.id}}"> {{ todo.description }} </td>
+    <td id="shuttle-todo-desc-{{todo.id}}"> {{ todo.title }} </td>
     <td>
         <button
             hx-delete="/todos/{{todo.id}}"
@@ -11,4 +12,5 @@
             Delete
         </button>
     </td>
-</tr> -->
+</tr>
+{% endblock %}
